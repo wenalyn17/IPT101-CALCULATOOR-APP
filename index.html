@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tillana:wght@700&display=swap" rel="stylesheet">
+    <style>
+    body {
+        width: 100%;
+        background-color: rgba(73, 155, 147, 0.62);
+        font-weight: 700;
+        text-align: center;
+        color: rgb(7, 7, 7);;
+    }
+    .container {
+        margin: 15% auto;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 7%;
+        background-color: rgb(245, 154, 224);
+        padding: 6%;
+        box-shadow: 30px 30px 50px rgba(62, 59, 59, 0.733);
+        border: 0px;
+    }
+    #display {
+        width: 300px;
+        margin: 15px 0px;
+        border-radius: 8%;
+        border: 0px;
+        background-color: rgb(155, 194, 232);
+        /*box-shadow: 5px 5px 10px rgba(49, 67, 79, 0.844);*/
+        font-size: 50px;
+        font-weight: 700;
+        font-family: cursive;
+        color: rgb(5, 6, 6);
+    }
+    .btn {
+        height: 60px;
+        width: 60px;
+        padding: 3%;
+        margin: 8px;
+        font-size: 30px;
+        font-weight: 700;
+        font-family: cursive;
+        color: rgb(15, 15, 15);
+        background-color: rgba(63, 65, 65, 0.542);
+        border-radius: 20%;
+        border: 0px;
+        box-shadow: -2px -2px 5px #35444484, 5px 5px 15px rgba(46, 64, 78, 0.671);
+    }
+    .btn:hover {
+        background-color: rgb(167, 243, 217);
+        color: darkslategray;
+    }
+    form .screen{
+        display: flex;
+        justify-content: flex-end;
+    }
+    form .screen input{
+        text-align: right;
+    }
+    footer{
+        color:rgb(25, 35, 44);
+        font-weight: 700;
+        font-family: cursive;
+        text-align: center;
+    }
+    @media only screen and (min-width: 768px){
+        .container{
+            padding: 45px;
+            margin: 10% auto;
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div class="container">
+        
+        <form action="">
+        <div class="screen">
+            <input type="text" name="display" id="display">
+        </div>
+        <div class="numpad">
+        <div>
+            <input class="btn" type="button" value="AC" onclick="display.value =''">
+            <input class="btn" type="button" value="C" onclick="display.value = display.value.toString().slice(0,-1)">
+            <input class="btn" type="button" value="%" onclick="display.value = (display.value)/100">
+            <input class="btn" type="button" value="/" onclick="display.value +='/'" class="operator">
+        </div>
+        <div>
+            <input class="btn" type="button" value="7" onclick="display.value +='7'">
+            <input class="btn" type="button" value="8" onclick="display.value +='8'">
+            <input class="btn" type="button" value="9" onclick="display.value +='9'">
+            <input class="btn" type="button" value="*" onclick="display.value +='*'" class="operator">
+        </div>
+        <div>
+            <input class="btn" type="button" value="4" onclick="display.value +='4'">
+            <input class="btn" type="button" value="5" onclick="display.value +='5'">
+            <input class="btn" type="button" value="6" onclick="display.value +='6'">
+            <input class="btn" type="button" value="-" onclick="display.value +='-'" class="operator">
+        </div>
+        <div>
+            <input class="btn" type="button" value="1" onclick="display.value +='1'">
+            <input class="btn" type="button" value="2" onclick="display.value +='2'">
+            <input class="btn" type="button" value="3" onclick="display.value +='3'">
+            <input class="btn" type="button" value="+" onclick="display.value +='+'" class="operator">
+        </div>
+        <div>
+            <input class="btn" type="button" value="00" onclick="display.value +='00'">
+            <input class="btn" type="button" value="0" onclick="display.value +='0'">
+            <input class="btn" type="button" value="." onclick="display.value +='.'">
+            <input class="btn" type="button" value="=" onclick="display.value = eval(display.value)" class="equal">
+        </div>
+        </div>
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
